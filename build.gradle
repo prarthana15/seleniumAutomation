@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'gradleproject'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile group: 'org.testng', name: 'testng', version: '7.3.0'
+
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.141.59'
+
+
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    compile group: 'com.google.guava', name: 'guava', version: '29.0-jre'
+
+
+    testImplementation "com.google.guava:guava:28.2-jre"
+    testImplementation ('org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-alpha-4')
+            { exclude group: "com.google.guava", module:"guava" }
+
+
+
+}
+
+test {
+    useTestNG()
+}
