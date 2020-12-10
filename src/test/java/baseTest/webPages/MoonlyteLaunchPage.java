@@ -22,7 +22,8 @@ public class MoonlyteLaunchPage {
         this.driver = driver;
     }
     public void clickonGrid(){
-        driver.findElements(grid).click();
+
+        driver.findElement(grid).click();
     }
     public void selectProcap(){
         driver.findElement(procapIcon).click();
